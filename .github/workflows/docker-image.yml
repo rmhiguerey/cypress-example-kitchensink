@@ -19,6 +19,6 @@ jobs:
     - run: curl --fail --request GET  --url "http://localhost:8080"
     - uses: actions/checkout@v3
       with: 
-       repocitory: rmhiguerey/cypress
+       repository: rmhiguerey/cypress
     - run: npm install
     - run: npx cypress run
