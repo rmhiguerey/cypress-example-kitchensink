@@ -12,15 +12,15 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    container: cypress/included:3.8.3
+    container: cypress/included:4.11.0
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v1
     - run: npm install
     - run: npm start &
-    - run: curl --fail --request GET  --url "http://localhost:8080"
+    #- run: curl --fail --request GET  --url "http://localhost:8080"
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v1
       with: 
        repository: rmhiguerey/cypress
-    - run: npm install
-    - run: npx cypress run
+    - run: npm ci
+    - run: cypress run
