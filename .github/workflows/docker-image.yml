@@ -21,4 +21,4 @@ jobs:
       with: 
        repocitory: rmhiguerey/cypress
     - run: npm install
-    - run: npm cypress-e2e
+    - run: npx cypress run
