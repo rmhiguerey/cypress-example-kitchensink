@@ -17,5 +17,8 @@ jobs:
     - run: npm install
     - run: npm start &
     - run: curl --fail --request GET  --url "http://localhost:8080"
-
-    - run: npm run e2e
+    - uses: actions/checkout@v3
+      with: 
+       repocitory: rmhiguerey/cypress
+    - run: npm install
+    - run: npm run cypress-e2e
