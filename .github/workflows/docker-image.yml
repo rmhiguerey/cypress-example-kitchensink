@@ -7,25 +7,22 @@ on:
     branches: [ master ]
 
 jobs:
-
-  build:
-
+  cypress-run:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2.4.2
-    - run: npm install
-    - run: npm start &
-    #- run: curl --fail --request GET  --url "http://localhost:8080"
-  
-  cypress:
-
-    runs-on: ubuntu-latest
-    needs: build
-    container: cypress/included:4.11.0
     
+    container: cypress/included:4.11.0
     steps:
-    - uses: actions/checkout@v2.4.2
-      with: 
-       repository: rmhiguerey/cypress
-    - run: npx browserslist@latest --update-db
-    - run: cypress run
+      - uses: actions/checkout@v2.4.2
+      - run: npm install
+      - run: npm start &
+      
+      - uses: actions/checkout@v2.4.2
+        with: 
+         repository: rmhiguerey/cypress
+      
+      - name: Install dependencies 📦
+        uses: bahmutov/npm-install@v1
+
+      - run: npx browserslist@latest --update-db
+      - run: cypress run
+  
