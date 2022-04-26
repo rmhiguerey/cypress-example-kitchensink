@@ -11,12 +11,14 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
+    container: cypress/included:3.8.3
     steps:
     - uses: actions/checkout@v3
     - run: npm install
     - run: npm start &
     - run: curl --fail --request GET  --url "http://localhost:8080"
+
     - uses: actions/checkout@v3
       with: 
        repository: rmhiguerey/cypress
