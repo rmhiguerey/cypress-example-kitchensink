@@ -14,12 +14,12 @@ jobs:
     
     container: cypress/included:4.11.0
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2.4.2
     - run: npm install
     - run: npm start &
     #- run: curl --fail --request GET  --url "http://localhost:8080"
 
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2.4.2
       with: 
        repository: rmhiguerey/cypress
     - run: npm ci
