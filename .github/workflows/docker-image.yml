@@ -22,4 +22,5 @@ jobs:
     - uses: actions/checkout@v2.4.2
       with: 
        repository: rmhiguerey/cypress
+    - run: npx browserslist@latest --update-db
     - run: cypress run
